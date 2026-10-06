@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jean Claude Maniriho | Mathematical Epidemiologist & Data Analyst</title>
+
+  <meta
+    name="description"
+    content="Jean Claude Maniriho — Mathematical Epidemiologist, Data Analyst and Full-Stack Developer working across epidemiology, climate-health, data science and digital solutions."
+  >
+
+  <meta name="author" content="Jean Claude Maniriho">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface-2: #eef3f8;
+      --text: #17202a;
+      --muted: #5f6b76;
+      --primary: #1261a0;
+      --primary-dark: #0b4778;
+      --border: #dce3ea;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .07);
+      --radius: 16px;
+    }
+
+    body.dark {
+      --bg: #0d1117;
+      --surface: #151b23;
+      --surface-2: #1d2630;
+      --text: #edf2f7;
+      --muted: #aab5c0;
+      --primary: #55a7e8;
+      --primary-dark: #8bc7f5;
+      --border: #2b3540;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, .92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    body.dark nav {
+      background: rgba(13, 17, 23, .92);
+    }
+
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .theme-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: .8rem;
+      margin-bottom: 14px;
+    }
+
+    /*
+      NAME
+      Keeps "Jean Claude Maniriho" on one line.
+      Only "Maniriho" is blue.
+    */
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.02;
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--surface-2);
+    }
+
+    .profile-photo {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: auto;
+      border: 6px solid var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 7px;
+    }
+
+    .card .organization {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      position: relative;
+    }
+
+    .experience-card {
+      position: relative;
+      padding-left: 32px;
+      border-left: 3px solid var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .experience-card h3 {
+      margin-bottom: 3px;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .project-category {
+      display: inline-block;
+      width: fit-content;
+      background: var(--surface-2);
+      color: var(--primary);
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: .75rem;
+      font-weight: 700;
+      margin: 10px 0 14px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .education-card {
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .contact-links a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .profile-photo {
+        width: 190px;
+        height: 190px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: clamp(1.9rem, 9vw, 3rem);
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#home" class="logo">JCM</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button
+        class="theme-btn"
+        id="themeToggle"
+        aria-label="Toggle dark mode"
+      >
+        🌙
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero" id="home">
+
+    <div class="container hero-grid">
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+          Mathematics • Epidemiology • Data • Technology
+        </div>
+
+        <!-- NAME: Jean Claude Maniriho, one line -->
+        <h1>Jean Claude <span>Maniriho</span></h1>
+
+        <div class="hero-subtitle">
+          Mathematical Epidemiologist · Data Analyst · Full-Stack Developer
+        </div>
+
+        <p class="hero-description">
+         I combine mathematics, statistics, data analytics and technology to turn complex health and environmental data into actionable solutions for epidemiology, public health, climate-health and digital systems.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            Explore My Work
+          </a>
+
+          <a href="cv.pdf" class="btn btn-outline" download>
+            Download CV
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="reveal">
+
+        <img
+          src="ogi.png"
+          alt="Jean Claude Maniriho"
+          width="250"
+          height="250"
+          class="profile-photo"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section id="about">
+
+    <div class="container reveal">
+
+      <div class="section-title">
+
+        <h2>About Me</h2>
+
+        <p>
+          Research, data and technology with a focus on real-world impact.
+        </p>
+
+      </div>
+
+      <p>
+        I am a Mathematical Epidemiologist and Data Analyst with a background
+        in Mathematics and Statistics and an MSc in Mathematical Sciences
+        (Epidemiology) from AIMS Rwanda.
+      </p>
+
+      <br>
+
+      <p>
+        My work combines epidemiological research, statistical and mathematical
+        modelling, spatial analysis, machine learning and software development.
+        I am particularly interested in infectious diseases, climate-health,
+        public health data and digital solutions for African contexts.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIENCE
+  ========================= -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-title reveal">
+
+        <h2>Experience</h2>
+
+        <p>
+          Research, data analytics, digital innovation and community leadership
+          across health, technology and development.
+        </p>
+
+      </div>
+
+      <div class="experience">
+
+
+        <!-- KEMRI -->
+
+        <article class="experience-card reveal">
+
+          <h3>Research Assistant</h3>
+
+          <div class="organization">
+            Kenya Medical Research Institute (KEMRI)
+          </div>
+
+          <div class="date">
+            Apr 2026 – Sep 2026 · Nairobi, Kenya
+          </div>
+
+          <p>
+            Contributed to epidemiological research and large-scale malaria
+            surveillance analysis, combining statistical modelling with
+            geospatial methods to investigate patterns of malaria risk.
+          </p>
+
+          <ul>
+
+            <li>
+              Managed, cleaned and analysed multi-source datasets containing
+              62,000+ records across 47 counties, supporting data quality,
+              consistency and downstream statistical analysis.
+            </li>
+
+            <li>
+              Applied Bayesian spatial methods, R-INLA, GAMM and geospatial
+              statistics including Moran's I, LISA and Getis-Ord Gi*
+              to investigate malaria risk patterns.
+            </li>
+
+            <li>
+              Contributed to research outputs and evidence-based reporting
+              linking epidemiological findings with public-health decision
+              making.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- SCEFI -->
+
+        <article class="experience-card reveal">
+
+          <h3>Founder & Lead</h3>
+
+          <div class="organization">
+            Safe Childhood, Educated Futures Initiative (SCEFI)
+          </div>
+
+          <div class="date">
+            2025 – Present · Rwanda
+          </div>
+
+          <p>
+            Building a community-driven initiative that uses education,
+            technology and data to create safer, more informed and
+            better-supported futures for children and underserved communities
+            in Rwanda.
+          </p>
+
+          <ul>
+
+            <li>
+              Lead the development of a digital platform connecting education,
+              child protection, community engagement and social-impact
+              activities.
+            </li>
+
+            <li>
+              Designed a District Need Index combining education, health and
+              child-protection indicators to support data-informed
+              identification and prioritisation of community needs.
+            </li>
+
+            <li>
+              Developed grant proposals and resource-mobilisation briefs while
+              building partnerships around the initiative's social-impact
+              objectives.
+            </li>
+
+          </ul>
+
+          <div class="project-links">
+
+            <a
+              href="https://scefi-platform.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              Explore SCEFI →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- CX TOUCHPOINTS -->
+
+        <article class="experience-card reveal">
+
+          <h3>Data Analytics Intern</h3>
+
+          <div class="organization">
+            CX Touchpoints Group
+          </div>
+
+          <div class="date">
+            Mar 2025 – Jun 2025 · Kigali, Rwanda
+          </div>
+
+          <p>
+            Applied data analytics and visualisation to customer-experience
+            data, transforming operational information into actionable
+            insights for service improvement.
+          </p>
+
+          <ul>
+
+            <li>
+              Collected, cleaned and analysed customer-experience data to
+              identify trends, performance patterns and opportunities for
+              service improvement.
+            </li>
+
+            <li>
+              Developed analytical dashboards and reports using R and Power BI
+              to communicate key findings and performance indicators.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- RWANDA STOCK EXCHANGE -->
+
+        <article class="experience-card reveal">
+
+          <h3>Data Analyst Intern</h3>
+
+          <div class="organization">
+            Rwanda Stock Exchange
+          </div>
+
+          <div class="date">
+            Dec 2024 – Feb 2025 · Kigali, Rwanda
+          </div>
+
+          <p>
+            Worked with financial and stock-market data to support market
+            monitoring, analysis and reporting.
+          </p>
+
+          <ul>
+
+            <li>
+              Analysed stock-market and financial datasets to identify trends
+              and generate analytical insights.
+            </li>
+
+            <li>
+              Produced analytical reports and supported real-time market
+              monitoring and financial-data visualisation.
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <!-- COMMUNITY MENTOR -->
+
+        <article class="experience-card reveal">
+
+          <h3>Community Mentor (Volunteer)</h3>
+
+          <div class="organization">
+            Rural Education Support Initiative
+          </div>
+
+          <div class="date">
+            2023 – Present · Rwanda
+          </div>
+
+          <p>
+            Supporting young learners through Mathematics and Physics
+            mentorship, with a focus on academic development and access to
+            STEAM education.
+          </p>
+
+          <ul>
+
+            <li>
+              Mentored students in Mathematics and Physics, supporting
+              examination preparation and problem-solving skills.
+            </li>
+
+            <li>
+              Promoted interest in STEAM education among learners in an
+              underserved community.
+            </li>
+
+          </ul>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title reveal">
+
+        <h2>Projects</h2>
+
+        <p>
+          Research, mathematical modelling, machine learning, software
+          development and data-driven solutions.
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+
+        <!-- 01 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">01</div>
+
+          <h3>
+            Climate Change and Malaria Risk Assessment among School Children
+            in Kenya
+          </h3>
+
+          <div class="project-category">
+            Epidemiology · Climate-Health · Spatial Statistics
+          </div>
+
+          <p>
+            MSc research assessing the effects of climate indicators on the
+            spatial distribution of malaria infection among 62,000+ school
+            children across 47 Kenyan counties from 2019–2023.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              R · R-INLA · GAMM · Moran's I · LISA · Getis-Ord Gi*
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">02</div>
+
+          <h3>
+            Parameter Estimation & Uncertainty Quantification for Aron’s
+            Density Malaria Model
+          </h3>
+
+          <div class="project-category">
+            Mathematical Epidemiology · Bayesian Modelling
+          </div>
+
+          <p>
+            Estimated parameters of a malaria mathematical model using Least
+            Squares and Bayesian MCMC, with a focus on parameter uncertainty
+            and model interpretation.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              Least Squares · Bayesian MCMC · Uncertainty Quantification
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">03</div>
+
+          <h3>
+            Modelling <i>Haemophilus influenzae</i> in Children with Otitis
+            Media using GLMM
+          </h3>
+
+          <div class="project-category">
+            Biostatistics · GLMM · Longitudinal Data
+          </div>
+
+          <p>
+            Analysed longitudinal clinical-trial data from 50 children and
+            220 repeated binary measurements using Generalized Linear Mixed
+            Models to evaluate antibiotic efficacy.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              R · GLMM · Longitudinal Modelling
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">04</div>
+
+          <h3>
+            Survival Analysis Models for Maternal Mortality Risk Assessment
+            in Rwanda
+          </h3>
+
+          <div class="project-category">
+            Biostatistics · Survival Analysis
+          </div>
+
+          <p>
+            Applied survival-analysis methods in R to investigate factors
+            associated with maternal mortality and healthcare outcomes in
+            Rwanda.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              R · Survival Analysis · Statistical Modelling
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">05</div>
+
+          <h3>
+            Stock Price Prediction using Machine Learning
+          </h3>
+
+          <div class="project-category">
+            Machine Learning · Financial Analytics
+          </div>
+
+          <p>
+            Built an end-to-end machine-learning pipeline for stock-price
+            prediction, comparing Linear Regression, Random Forest and SVR
+            using RMSE and R².
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              Python · Machine Learning · Flask
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">06</div>
+
+          <h3>
+            Mediroq — Pharmacy Technology MVP
+          </h3>
+
+          <div class="project-category">
+            Digital Health · Software · AI
+          </div>
+
+          <p>
+            Digital-health MVP exploring pharmacy medicine-availability
+            information, patient requests, pharmacy stock reporting and
+            AI-assisted prescription information extraction.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              Digital Health · Data · AI-assisted Workflows
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 07 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">07</div>
+
+          <h3>
+            AIMS Workspace Management System
+          </h3>
+
+          <div class="project-category">
+            Django · Database Systems · Web Development
+          </div>
+
+          <p>
+            Django web application for managing workspace and academic
+            records, applying relational database design and data-management
+            principles.
+          </p>
+
+          <div class="project-links">
+
+            <a
+              href="https://jeanman.pythonanywhere.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              Live Application →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 08 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">08</div>
+
+          <h3>
+            AIMS Student Database Management System
+          </h3>
+
+          <div class="project-category">
+            Django · SQL · Database Development
+          </div>
+
+          <p>
+            Designed a relational student-management system for records,
+            cohorts, programmes and enrolments, with a focus on structured
+            data and integrity.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              Python · Django · SQLite · SQL
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 09 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">09</div>
+
+          <h3>
+            SCEFI Platform & District Need Index
+          </h3>
+
+          <div class="project-category">
+            Social Impact · Data · Digital Platform
+          </div>
+
+          <p>
+            A community-focused digital platform combining education, health
+            and child-protection data to support safer childhoods,
+            educational opportunities and evidence-based community needs
+            assessment in Rwanda.
+          </p>
+
+          <div class="project-links">
+
+            <a
+              href="https://scefi-platform.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              Explore Platform →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- 10 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">10</div>
+
+          <h3>
+            Customer Experience Analytics Dashboard
+          </h3>
+
+          <div class="project-category">
+            Data Analytics · Power BI
+          </div>
+
+          <p>
+            Developed dashboards and analytical reports to transform
+            customer-experience data into actionable KPIs, trends and service
+            improvement insights.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              R · Power BI · Data Visualisation
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 11 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">11</div>
+
+          <h3>
+            Stock Market Financial Data Analysis
+          </h3>
+
+          <div class="project-category">
+            Financial Data · Analytics
+          </div>
+
+          <p>
+            Analysed Rwanda Stock Exchange data to support market monitoring,
+            analytical reporting and financial-data visualisation.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              Financial Analytics · Reporting · Visualisation
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 12 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">12</div>
+
+          <h3>
+            Data Value Chains & Digital Public Infrastructure for Rwanda
+          </h3>
+
+          <div class="project-category">
+            Policy Research · Data Governance · DPI
+          </div>
+
+          <p>
+            Policy research examining data value chains, digital public
+            infrastructure and data governance for evidence-based public
+            services in Rwanda.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              Policy Research · Data Governance
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- 13 -->
+
+        <article class="card project-card reveal">
+
+          <div class="project-number">13</div>
+
+          <h3>
+            Deep Learning IndabaX Kenya AI Summit 2026
+          </h3>
+
+          <div class="project-category">
+            Research Presentation · AI · Epidemiology
+          </div>
+
+          <p>
+            Presented malaria-risk assessment research at the Deep Learning
+            IndabaX Kenya AI Summit in Nairobi, connecting epidemiological
+            modelling with AI and data-science communities.
+          </p>
+
+          <div class="project-links">
+
+            <span class="project-link">
+              AI · Research · Malaria Epidemiology
+            </span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TECHNICAL SKILLS
+  ========================= -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-title reveal">
+
+        <h2>Technical Skills</h2>
+
+        <p>
+          Tools and methods I use across research, analytics and software
+          development.
+        </p>
+
+      </div>
+
+      <div class="skills-grid">
+
+
+        <!-- Programming & Development -->
+
+        <div class="skill-card reveal">
+
+          <h3>Programming & Development</h3>
+
+          <p>
+            R · Python · SQL · Django · HTML/CSS · Java · Git · Linux
+          </p>
+
+        </div>
+
+
+        <!-- Statistical & Data Tools -->
+
+        <div class="skill-card reveal">
+
+          <h3>Statistical & Data Tools</h3>
+
+          <p>
+            Excel ·R . Python . MATLAB · SPSS · Power BI
+          </p>
+
+        </div>
+
+
+        <!-- Methods & Analytics -->
+
+        <div class="skill-card reveal">
+
+          <h3>Methods & Analytics</h3>
+
+          <p>
+            Statistical Modelling · Spatial Statistics · Machine Learning ·
+            Epidemiological Modelling · Data Visualisation
+          </p>
+
+        </div>
+
+
+        <!-- Data & Systems -->
+
+        <div class="skill-card reveal">
+
+          <h3>Data & Systems</h3>
+
+          <p>
+            Database Development · Data Analysis · Data Management
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EDUCATION
+  ========================= -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <div class="section-title reveal">
+
+        <h2>Education</h2>
+
+      </div>
+
+
+      <!-- MSc -->
+
+      <div class="card education-card reveal">
+
+        <h3>
+          MSc Mathematical Sciences — Epidemiology
+        </h3>
+
+        <div class="organization">
+          African Institute for Mathematical Sciences (AIMS Rwanda)
+        </div>
+
+        <div class="date">
+          Completed 2026 
+        </div>
+
+        <p>
+          Thesis:
+          <strong>
+            Assessing the effects of climatic indicators on the spatial
+            distribution of malaria infection among school children in Kenya,
+            from 2019 to 2023.
+          </strong>
+        </p>
+
+      </div>
+
+
+      <!-- BSc -->
+
+      <div class="card education-card reveal">
+
+        <h3>
+          BSc (Hons) Mathematics and Statistics
+        </h3>
+
+        <div class="organization">
+          University of Rwanda — College of Science and Technology
+        </div>
+
+        <div class="date">
+          Completed 2025
+        </div>
+
+        <p>
+          Final Year Project:
+          <strong>
+            Survival Analysis Models for Maternal Mortality Risk Assessment
+            in Rwanda.
+          </strong>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box reveal">
+
+        <div class="section-title">
+
+          <h2>Let's Connect</h2>
+
+          <p>
+            I am open to opportunities in data analytics, epidemiology,
+            public health, research, climate-health, data engineering
+            and technology.
+          </p>
+
+        </div>
+
+        <div class="contact-links">
+
+          <a href="mailto:jeanclaude.maniriho@aims.ac.rw">
+            Email
+          </a>
+
+          <a
+            href="https://wa.me/250781556924"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/jean-claude-maniriho-3a308929b/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/Claude-2Rachande"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a href="cv.pdf" download>
+            Download CV
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      © <span id="year"></span> Jean Claude Maniriho.
+      Built with mathematics, data and technology.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    // YEAR
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // DARK MODE
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+
+      document.body.classList.add("dark");
+
+      themeToggle.textContent = "☀️";
+
+    }
+
+
+    themeToggle.addEventListener("click", () => {
+
+      document.body.classList.toggle("dark");
+
+      const dark =
+        document.body.classList.contains("dark");
+
+      localStorage.setItem(
+        "theme",
+        dark ? "dark" : "light"
+      );
+
+      themeToggle.textContent =
+        dark ? "☀️" : "🌙";
+
+    });
+
+
+    // SCROLL REVEAL
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    if ("IntersectionObserver" in window) {
+
+      const observer =
+        new IntersectionObserver(
+
+          (entries, obs) => {
+
+            entries.forEach(entry => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                obs.unobserve(entry.target);
+
+              }
+
+            });
+
+          },
+
+          {
+            threshold: 0.12
+          }
+
+        );
+
+
+      revealElements.forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+    } else {
+
+      revealElements.forEach(element => {
+
+        element.classList.add("visible");
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
